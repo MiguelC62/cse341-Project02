@@ -1,0 +1,19 @@
+[
+    {
+        "painting_name": "Amigos",
+        "stylename": "Impressionism",
+        "author_name": "Claudia Dominguez",
+        "painting_description": "Two friends walking along the pier towards the sea",
+        "painting_data": "12/12/2021",
+        "painting_technic": "oleo paint paste"
+    },
+    {
+        "painting_name": "San Lorenzo",
+        "stylename": "Landscapes",
+        "author_name": "Claudia Dominguez",
+        "painting_description": "Two friends walking along the pier towards the sea",
+        "painting_data": "10/10/2021",
+        "painting_technic": "oleo paint over canvas"
+    }
+]
+  

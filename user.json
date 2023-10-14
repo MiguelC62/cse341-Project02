@@ -1,0 +1,22 @@
+[
+    {
+        "username": "mac",
+        "password": "crd",
+        "firstname": "Miguel",
+        "lastname": "Condori",
+        "email": "mac@gmail.com",
+        "phonenumber": "+543871234567",
+        "stylename": "Impressionism",
+        "message": ""
+    },
+    {
+        "username": "crd",
+        "password": "crd",
+        "firstname": "Claudia",
+        "lastname": "Dominguez",
+        "email": "crd@gmail.com",
+        "phonenumber": "+543877654321",
+        "stylename": "Landscapes",
+        "message": ""
+    }
+]

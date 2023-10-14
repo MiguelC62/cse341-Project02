@@ -1,0 +1,43 @@
+// LOCALHOST
+//Users
+###
+GET http://localhost:8080/user
+###
+
+GET http://localhost:8080/user/Landscapes
+###
+
+### Create contact
+POST http://localhost:8080/user HTTP/1.1
+content-type: application/json
+
+{
+    "username": "jmc",
+    "password": "jmc",
+    "firstname": "Joaquin",
+    "lastname": "Condori",
+    "email": "jmc@gmail.com",
+    "phonenumber": "+543879988776",
+    "stylename": "Landscapes",
+    "message": ""
+}
+//Paintings
+###
+GET http://localhost:8080/painting
+###
+
+GET http://localhost:8080/painting/Landscapes
+###
+
+### Create contact
+POST http://localhost:8080/painting HTTP/1.1
+content-type: application/json
+
+{
+    "painting_name": "Pepe",
+    "stylename": "Landscapes",
+    "author_name": "Claudia Dominguez",
+    "painting_description": "Two friends walking along the pier towards the sea",
+    "painting_data": "10/10/2021",
+    "painting_technic": "oleo paint over canvas"
+}
