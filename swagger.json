@@ -1,487 +1,179 @@
 {
   "swagger": "2.0",
   "info": {
-    "description": "This is an API server for a painting sales website.\n",
-    "version": "1.0.0",
-    "title": "Painting Sales Website",
-    "contact": {
-      "email": "con19008@byui.edu"
-    },
-    "license": {
-      "name": "Apache 2.0",
-      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-    }
+    "title": "My API",
+    "description": "Description",
+    "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "cse341-class05.onrender.com",
   "basePath": "/",
-  "tags": [
-    {
-      "name": "painting",
-      "description": "Operations about painting"
-    },
-    {
-      "name": "user",
-      "description": "Operations about user"
-    },
-    {
-      "name": "Not Yet Implemented",
-      "description": "These API endpoints are designed and will be created in the near future"
-    }
+  "schemes": [
+    "https"
   ],
-  "schemes": ["http"],
   "paths": {
-    "/painting/{stylename}": {
+    "/api-docs": {
       "get": {
-        "tags": ["painting"],
-        "summary": "Finds paintings by style",
-        "description": "Each painting has a unique style, this will basically find paintings by an exact style",
-        "operationId": "findPaintByStyle",
-        "produces": ["application/json"],
-        "parameters": [
-          {
-            "name": "stylename",
-            "in": "path",
-            "description": "The painting style",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "security": [
-          {
-            "petstore_auth": ["write:pets", "read:pets"]
-          }
-        ],
+        "description": "",
         "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/Painting"
-            }
-          },
-          "400": {
-            "description": "Invalid painting style supplied"
-          },
-          "404": {
-            "description": "Painting style not found"
+          "default": {
+            "description": ""
           }
         }
       }
     },
-    "/painting": {
+    "/user/": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
       "post": {
-        "tags": ["Not Yet Implemented"],
-        "summary": "Create painting",
-        "description": "This is for when a user creates a painting.",
-        "operationId": "createPainting",
-        "produces": ["application/json"],
+        "description": "",
         "parameters": [
           {
-            "name": "paintingname",
-            "in": "query",
-            "description": "The paintin description",
-            "required": true,
-            "type": "string"
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "example": "any"
+                },
+                "password": {
+                  "example": "any"
+                },
+                "firstname": {
+                  "example": "any"
+                },
+                "lastname": {
+                  "example": "any"
+                },
+                "email": {
+                  "example": "any"
+                },
+                "phonenumber": {
+                  "example": "any"
+                },
+                "stylename": {
+                  "example": "any"
+                },
+                "message": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
           "201": {
-            "description": "successfully created user",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer",
-                  "format": "int64"
-                },
-                "name": {
-                  "type": "string",
-                  "example": "Impressionism"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid style name value"
-          }
-        }
-      },
-      "delete": {
-        "tags": ["Not Yet Implemented"],
-        "summary": "Delete painting",
-        "description": "This can only be done by the logged in user.",
-        "operationId": "deletePainting",
-        "produces": ["application/json"],
-        "parameters": [
-          {
-            "name": "paintingname",
-            "in": "query",
-            "description": "The paintin description",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Successfully deleted user"
-          },
-          "400": {
-            "description": "Invalid username supplied"
-          },
-          "404": {
-            "description": "User not found"
-          }
-        }
-      },
-      "put": {
-        "tags": ["Not Yet Implemented"],
-        "summary": "Update painting",
-        "description": "This can only be done by the logged in user.",
-        "operationId": "updatePainting",
-        "produces": ["application/json"],
-        "parameters": [
-          {
-            "name": "paintingname",
-            "in": "query",
-            "description": "The paintin description",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Successfully deleted user"
-          },
-          "400": {
-            "description": "Invalid username supplied"
-          },
-          "404": {
-            "description": "User not found"
-          }
-        }
-      },
-      "get": {
-        "tags": ["Not Yet Implemented"],
-        "summary": "Get all paintings",
-        "operationId": "getAllPaintss",
-        "produces": ["application/json"],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "type": "Array",
-              "$ref": "#/definitions/User"
-            }
+            "description": "Created"
           },
           "500": {
-            "description": "Error occurred"
+            "description": "Internal Server Error"
           }
         }
       }
     },
-    "/user/login": {
+    "/user/{stylename}": {
       "get": {
-        "tags": ["Not Yet Implemented"],
-        "summary": "Logs user into the system",
-        "operationId": "loginUser",
-        "produces": ["application/json"],
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
         "parameters": [
           {
-            "name": "username",
-            "in": "query",
-            "description": "The user name for login",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "name": "password",
-            "in": "query",
-            "description": "The password for login in clear text",
+            "name": "stylename",
+            "in": "path",
             "required": true,
             "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
-            "headers": {
-              "X-Rate-Limit": {
-                "type": "integer",
-                "format": "int32",
-                "description": "calls per hour allowed by the user"
-              },
-              "X-Expires-After": {
-                "type": "string",
-                "format": "date-time",
-                "description": "date in UTC when token expires"
-              }
-            },
-            "schema": {
-              "type": "string"
-            }
-          },
-          "400": {
-            "description": "Invalid username/password supplied"
+            "description": "OK"
           }
         }
       }
     },
-    "/user/logout": {
+    "/painting/": {
       "get": {
-        "tags": ["Not Yet Implemented"],
-        "summary": "Logs out current logged in user session",
-        "operationId": "logoutUser",
-        "produces": ["application/json"],
-        "parameters": [],
-        "responses": {
-          "default": {
-            "description": "successful operation"
-          }
-        }
-      }
-    },
-    "/user/{username}": {
-      "get": {
-        "tags": ["user"],
-        "summary": "Get user by user name",
-        "operationId": "getUserByName",
-        "produces": ["application/json"],
-        "parameters": [
-          {
-            "name": "username",
-            "in": "path",
-            "description": "The name that needs to be fetched.",
-            "required": true,
-            "type": "string"
-          }
+        "description": "",
+        "produces": [
+          "application/json"
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
-          },
-          "400": {
-            "description": "Invalid username supplied"
-          },
-          "404": {
-            "description": "User not found"
-          }
-        }
-      },
-      "put": {
-        "tags": ["Not Yet Implemented"],
-        "summary": "Updated user",
-        "description": "This can only be done by the logged in user.",
-        "operationId": "updateUser",
-        "produces": ["application/json"],
-        "parameters": [
-          {
-            "name": "username",
-            "in": "path",
-            "description": "name that need to be updated",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "body",
-            "name": "body",
-            "description": "Updated user object",
-            "required": true,
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Successfully modified user"
-          },
-          "400": {
-            "description": "Invalid user supplied"
-          },
-          "404": {
-            "description": "User not found"
-          }
-        }
-      },
-      "delete": {
-        "tags": ["Not Yet Implemented"],
-        "summary": "Delete user",
-        "description": "This can only be done by the logged in user.",
-        "operationId": "deleteUser",
-        "produces": ["application/json"],
-        "parameters": [
-          {
-            "name": "username",
-            "in": "path",
-            "description": "The name that needs to be deleted",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Successfully deleted user"
-          },
-          "400": {
-            "description": "Invalid username supplied"
-          },
-          "404": {
-            "description": "User not found"
-          }
-        }
-      }
-    },
-    "/user": {
-      "get": {
-        "tags": ["user"],
-        "summary": "Get all users",
-        "operationId": "getAllUsers",
-        "produces": ["application/json"],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "schema": {
-              "type": "Array",
-              "$ref": "#/definitions/User"
-            }
-          },
-          "500": {
-            "description": "Error occurred"
+            "description": "OK"
           }
         }
       },
       "post": {
-        "tags": ["user"],
-        "summary": "Create user",
-        "description": "This is for when a user creates an account",
-        "operationId": "createUser",
-        "produces": ["application/json"],
+        "description": "",
         "parameters": [
           {
-            "in": "body",
             "name": "body",
-            "description": "Created user object",
-            "required": true,
+            "in": "body",
             "schema": {
-              "$ref": "#/definitions/Credentials"
+              "type": "object",
+              "properties": {
+                "painting_name": {
+                  "example": "any"
+                },
+                "stylename": {
+                  "example": "any"
+                },
+                "author_name": {
+                  "example": "any"
+                },
+                "painting_description": {
+                  "example": "any"
+                },
+                "painting_data": {
+                  "example": "any"
+                },
+                "painting_technic": {
+                  "example": "any"
+                }
+              }
             }
           }
         ],
         "responses": {
-          "default": {
-            "description": "A User object",
-            "schema": {
-              "$ref": "#/definitions/User"
-            }
+          "201": {
+            "description": "Created"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/painting/{stylename}": {
+      "get": {
+        "description": "",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "stylename",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
     }
-  },
-  "securityDefinitions": {
-    "petstore_auth": {
-      "type": "oauth2",
-      "authorizationUrl": "http://petstore.swagger.io/oauth/dialog",
-      "flow": "implicit",
-      "scopes": {
-        "write:pets": "modify pets in your account",
-        "read:pets": "read your pets"
-      }
-    }
-  },
-  "definitions": {
-    "User": {
-      "type": "object",
-      "required": ["password", "username"],
-      "properties": {
-        "_id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "username": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        },
-        "info": {
-          "$ref": "#/definitions/User_info"
-        }
-      }
-    },
-    "Painting": {
-      "type": "object",
-      "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
-        "painting_name": {
-          "type": "string"
-        },
-        "style_name": {
-          "type": "string",
-          "example": "Impressionism"
-        },
-        "author_name": {
-          "type": "string",
-          "example": "Claudia Dominguez"
-        },
-        "painting_description": {
-          "type": "string",
-          "example": "Two friends walking along the pier towards the sea"
-        },
-        "painting_date": {
-          "type": "string",
-          "format": "date",
-          "example": "01/01/2020"
-        },
-        "painting_technic": {
-          "type": "string",
-          "example": "oleo paint paste"
-        }
-      }
-    },
-    "Credentials": {
-      "type": "object",
-      "required": ["password", "username"],
-      "properties": {
-        "username": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
-        }
-      }
-    },
-    "User_info": {
-      "type": "object",
-      "properties": {
-        "firstname": {
-          "type": "string"
-        },
-        "lastname": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        },
-        "phonenumber": {
-          "type": "string"
-        },
-        "currentlocation": {
-          "type": "string"
-        },
-        "stylename": {
-          "type": "string"
-        },
-        "message": {
-          "type": "string"
-        }
-      }
-    }
-    
   }
 }
