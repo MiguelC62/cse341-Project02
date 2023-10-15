@@ -14,6 +14,7 @@
   },
   "host": "cse341-class05.onrender.com",
   "basePath": "/",
+  "schemes": ["https"],
   "tags": [
     {
       "name": "painting",
@@ -28,14 +29,13 @@
       "description": "These API endpoints are designed and will be created in the near future"
     }
   ],
-  "schemes": ["https"],
   "paths": {
     "/painting/{stylename}": {
       "get": {
         "tags": ["painting"],
         "summary": "Finds paintings by style",
         "description": "Each painting has a unique style, this will basically find paintings by an exact style",
-        "operationId": "findPaintByStyle",
+        "operationId": "getPainting",
         "produces": ["application/json"],
         "parameters": [
           {
@@ -67,7 +67,7 @@
         }
       }
     },
-    "/painting": {
+    "/painting/": {
       "post": {
         "tags": ["Not Yet Implemented"],
         "summary": "Create painting",
@@ -76,32 +76,39 @@
         "produces": ["application/json"],
         "parameters": [
           {
-            "name": "paintingname",
-            "in": "query",
-            "description": "The paintin description",
-            "required": true,
-            "type": "string"
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "painting_name": {
+                  "example": "any"
+                },
+                "stylename": {
+                  "example": "any"
+                },
+                "author_name": {
+                  "example": "any"
+                },
+                "painting_description": {
+                  "example": "any"
+                },
+                "painting_data": {
+                  "example": "any"
+                },
+                "painting_technic": {
+                  "example": "any"
+                }
+              }
+            }
           }
         ],
         "responses": {
           "201": {
-            "description": "successfully created user",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "integer",
-                  "format": "int64"
-                },
-                "name": {
-                  "type": "string",
-                  "example": "Impressionism"
-                }
-              }
-            }
+            "description": "Created"
           },
-          "400": {
-            "description": "Invalid style name value"
+          "500": {
+            "description": "Internal Server Error"
           }
         }
       },
@@ -333,7 +340,7 @@
         }
       }
     },
-    "/user": {
+    "/user/": {
       "get": {
         "tags": ["user"],
         "summary": "Get all users",
@@ -365,7 +372,7 @@
             "description": "Created user object",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/Credentials"
+              "$ref": "#/definitions/User"
             }
           }
         ],
@@ -441,18 +448,6 @@
         "painting_technic": {
           "type": "string",
           "example": "oleo paint paste"
-        }
-      }
-    },
-    "Credentials": {
-      "type": "object",
-      "required": ["password", "username"],
-      "properties": {
-        "username": {
-          "type": "string"
-        },
-        "password": {
-          "type": "string"
         }
       }
     },
