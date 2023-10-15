@@ -41,3 +41,24 @@ content-type: application/json
     "painting_data": "10/10/2021",
     "painting_technic": "oleo paint over canvas"
 }
+
+// PRODUCTION Deploy
+###
+GET https://cse341-class05.onrender.com/user
+###
+GET https://cse341-class05.onrender.com/user/Landscapes
+
+### Create contact
+POST https://cse341-class05.onrender.com/user HTTP/1.1
+content-type: application/json
+
+{
+    "username": "jmc",
+    "password": "jmc",
+    "firstname": "Joaquin",
+    "lastname": "Condori",
+    "email": "jmc@gmail.com",
+    "phonenumber": "+543879988776",
+    "stylename": "Landscapes",
+    "message": ""
+}

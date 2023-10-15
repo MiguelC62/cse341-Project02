@@ -447,7 +447,7 @@
           "type": "string",
           "example": "Sunrise"
         },
-        "style_name": {
+        "stylename": {
           "type": "string",
           "example": "Impressionism"
         },
