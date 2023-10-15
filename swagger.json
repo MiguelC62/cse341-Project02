@@ -401,7 +401,6 @@
   "definitions": {
     "User": {
       "type": "object",
-      "required": ["password", "username"],
       "properties": {
         "_id": {
           "type": "integer",
