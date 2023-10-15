@@ -41,11 +41,14 @@ const updateUser = async (req, res) => {
   const userId = new ObjectId(req.params.id);
   // be aware of updateOne if you only want to update specific fields
   const contact = {
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
+    username: req.body.username,
+    password: req.body.password,
+    firstname: req.body.firstname,
+    lastname: req.body.lastname,
     email: req.body.email,
-    favoriteColor: req.body.favoriteColor,
-    birthday: req.body.birthday,
+    phonenumber: req.body.phonenumber,
+    stylename: req.body.stylename,
+    message: req.body.message,
   };
   const response = await mongodb
     .getDb()
