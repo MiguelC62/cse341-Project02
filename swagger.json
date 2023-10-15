@@ -342,7 +342,7 @@
     },
     "/user/": {
       "get": {
-        "tags": ["user"],
+        "tags": ["Not Yet Implemented"],
         "summary": "Get all users",
         "operationId": "getAllUsers",
         "produces": ["application/json"],
@@ -402,48 +402,50 @@
     "User": {
       "type": "object",
       "properties": {
-        "_id": {
-          "type": "integer",
-          "format": "int64"
-        },
         "username": {
-          "type": "string"
+          "type": "string",
+          "example": "mac"
         },
         "password": {
-          "type": "string"
+          "type": "string",
+          "example": "mac"
         },
         "firstname": {
-          "type": "string"
+          "type": "string",
+          "example": "Miguel"
         },
         "lastname": {
-          "type": "string"
+          "type": "string",
+          "example": "Condori"
         },
         "email": {
-          "type": "string"
+          "type": "string",
+          "example": "mac@gmail.com"
         },
         "phonenumber": {
-          "type": "string"
+          "type": "string",
+          "example": "543871234567"
         },
         "currentlocation": {
-          "type": "string"
+          "type": "string",
+          "example": "Argentina"
         },
         "stylename": {
-          "type": "string"
+          "type": "string",
+          "example": "Landscapes"
         },
         "message": {
-          "type": "string"
+          "type": "string",
+          "example": ""
         }
       }
     },
     "Painting": {
       "type": "object",
       "properties": {
-        "id": {
-          "type": "integer",
-          "format": "int64"
-        },
         "painting_name": {
-          "type": "string"
+          "type": "string",
+          "example": "Sunrise"
         },
         "style_name": {
           "type": "string",
