@@ -412,8 +412,26 @@
         "password": {
           "type": "string"
         },
-        "info": {
-          "$ref": "#/definitions/User_info"
+        "firstname": {
+          "type": "string"
+        },
+        "lastname": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "phonenumber": {
+          "type": "string"
+        },
+        "currentlocation": {
+          "type": "string"
+        },
+        "stylename": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
         }
       }
     },
@@ -449,33 +467,6 @@
           "example": "oleo paint paste"
         }
       }
-    },
-    "User_info": {
-      "type": "object",
-      "properties": {
-        "firstname": {
-          "type": "string"
-        },
-        "lastname": {
-          "type": "string"
-        },
-        "email": {
-          "type": "string"
-        },
-        "phonenumber": {
-          "type": "string"
-        },
-        "currentlocation": {
-          "type": "string"
-        },
-        "stylename": {
-          "type": "string"
-        },
-        "message": {
-          "type": "string"
-        }
-      }
     }
-    
   }
 }
