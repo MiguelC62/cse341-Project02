@@ -4,7 +4,7 @@
 GET http://localhost:8080/user
 ###
 
-GET http://localhost:8080/user/Landscapes
+GET http://localhost:8080/user/jmc
 ###
 
 ### Create contact
@@ -12,8 +12,8 @@ POST http://localhost:8080/user HTTP/1.1
 content-type: application/json
 
 {
-    "username": "jmc",
-    "password": "jmc",
+    "username": "mac",
+    "password": "Mac1234$",
     "firstname": "Joaquin",
     "lastname": "Condori",
     "email": "jmc@gmail.com",
@@ -21,12 +21,30 @@ content-type: application/json
     "stylename": "Landscapes",
     "message": ""
 }
+### PUT contact
+PUT http://localhost:8080/user/mac HTTP/1.1
+content-type: application/json
+
+{
+    "username": "mac",
+    "password": "Jmc1234$",
+    "firstname": "Joaquin",
+    "lastname": "Condori",
+    "email": "jmc@gmail.com",
+    "phonenumber": "+543879988776",
+    "stylename": "Modernism",
+    "message": ""
+}
+### DELETE contact
+DELETE http://localhost:8080/user/mac HTTP/1.1
+
+
 //Paintings
 ###
 GET http://localhost:8080/painting
 ###
 
-GET http://localhost:8080/painting/Landscapes
+GET http://localhost:8080/painting/Miguel
 ###
 
 ### Create contact
@@ -46,7 +64,7 @@ content-type: application/json
 ###
 GET https://cse341-class05.onrender.com/user
 ###
-GET https://cse341-class05.onrender.com/user/Landscapes
+GET https://cse341-class05.onrender.com/user/Miguel
 
 ### Create contact
 POST https://cse341-class05.onrender.com/user HTTP/1.1
@@ -54,7 +72,7 @@ content-type: application/json
 
 {
     "username": "jmc",
-    "password": "jmc",
+    "password": "Jmc1234$",
     "firstname": "Joaquin",
     "lastname": "Condori",
     "email": "jmc@gmail.com",

@@ -12,9 +12,9 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "host": "cse341-class05.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
-  "schemes": ["https"],
+  "schemes": ["http"],
   "tags": [
     {
       "name": "painting",
@@ -277,7 +277,7 @@
         }
       },
       "put": {
-        "tags": ["Not Yet Implemented"],
+        "tags": ["user"],
         "summary": "Updated user",
         "description": "This can only be done by the logged in user.",
         "operationId": "updateUser",
@@ -313,7 +313,7 @@
         }
       },
       "delete": {
-        "tags": ["Not Yet Implemented"],
+        "tags": ["user"],
         "summary": "Delete user",
         "description": "This can only be done by the logged in user.",
         "operationId": "deleteUser",
@@ -404,15 +404,15 @@
       "properties": {
         "username": {
           "type": "string",
-          "example": "mac"
+          "example": "agc"
         },
         "password": {
           "type": "string",
-          "example": "mac"
+          "example": "Agc1234$"
         },
         "firstname": {
           "type": "string",
-          "example": "Miguel"
+          "example": "Alvaro"
         },
         "lastname": {
           "type": "string",
@@ -420,7 +420,7 @@
         },
         "email": {
           "type": "string",
-          "example": "mac@gmail.com"
+          "example": "agc@gmail.com"
         },
         "phonenumber": {
           "type": "string",

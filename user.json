@@ -1,7 +1,7 @@
 [
     {
         "username": "mac",
-        "password": "crd",
+        "password": "Mac1234$",
         "firstname": "Miguel",
         "lastname": "Condori",
         "email": "mac@gmail.com",
@@ -11,7 +11,7 @@
     },
     {
         "username": "crd",
-        "password": "crd",
+        "password": "Crd1234$",
         "firstname": "Claudia",
         "lastname": "Dominguez",
         "email": "crd@gmail.com",
