@@ -90,6 +90,9 @@ module.exports.updateUser = async (req, res) => {
     user.message = req.body.message;
       
     const updatedUser = await user.save();
+
+    // Respond with  status 204(whitout content)
+    res.status(204).send();
     
     return res.json(updatedUser);
 

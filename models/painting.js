@@ -20,9 +20,12 @@ module.exports = (mongoose) => {
         painting_technic: {
           type: String
         },
+        imageUrl: {
+          type: String
+        },
         price: {
           type: String
-        }
+        },
       }),
       'painting'
     );

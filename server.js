@@ -1,13 +1,13 @@
 const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
 
-/**** */
 const { auth, requiresAuth } = require('express-openid-connect');
 require('dotenv').config();
 
 //const port = process.env.PORT || 3000;
 const port = process.env.PORT || 8080;
-const app = express();
+
 
 const config = {
   authRequired: false,
@@ -29,9 +29,6 @@ app.get('/', (req, res) => {
 app.get('/profile', requiresAuth(), (req, res) => {
   res.send(JSON.stringify(req.oidc.user));
 });
-
-
-//**** */
 
 
 app
