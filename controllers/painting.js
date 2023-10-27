@@ -6,12 +6,12 @@ exports.getPainting = (req, res) => {
   const stylename = req.params.stylename;
   Painting.find({ stylename: stylename })
     .then((data) => {
-      if (!data) res.status(404).send({ message: 'Not found theme with name: ' + stylename });
+      if (!data) res.status(404).send({ message: 'Not found style with name: ' + stylename });
       else res.send(data[0]);
     })
     .catch((err) => {
       res.status(500).send({
-        message: 'Error retrieving theme with themeName=' + stylename,
+        message: 'Error retrieving style with stylename=' + stylename,
         error: err
       });
     });
@@ -114,3 +114,5 @@ module.exports.deletePainting = async (req, res) => {
       return res.status(500).json({message: 'Some error occurred while deleting the painting.'});
   }
 };
+
+
