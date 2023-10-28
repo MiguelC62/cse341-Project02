@@ -1,9 +1,10 @@
 const express = require('express');
+require('dotenv').config();
+
 const app = express();
 const bodyParser = require('body-parser');
 
 const { auth, requiresAuth } = require('express-openid-connect');
-require('dotenv').config();
 
 const port = process.env.PORT || 8080;
 
