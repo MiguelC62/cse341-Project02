@@ -70,7 +70,7 @@ content-type: application/json
     "message": ""
 }
 ### PUT contact
-PUT http://cse341-class05.onrender.com/mac HTTP/1.1
+PUT https://cse341-class05.onrender.com/user/mac HTTP/1.1
 content-type: application/json
 
 {
@@ -80,9 +80,9 @@ content-type: application/json
     "lastname": "Condori",
     "email": "mac@gmail.com",
     "phonenumber": "+543879988776",
-    "stylename": "Modernism",
+    "stylename": "Landscapes",
     "message": ""
 }
 ### DELETE contact
-DELETE http://cse341-class05.onrender.com/mac HTTP/1.1
+DELETE https://cse341-class05.onrender.com/user/jmc HTTP/1.1
 
