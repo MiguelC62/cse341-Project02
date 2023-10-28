@@ -4,7 +4,7 @@
 GET http://localhost:8080/user
 ###
 
-GET http://localhost:8080/user/jmc
+GET http://localhost:8080/user/mac
 ###
 
 ### Create contact
@@ -12,14 +12,15 @@ POST http://localhost:8080/user HTTP/1.1
 content-type: application/json
 
 {
-    "username": "mac",
-    "password": "Mac1234$",
+    "username": "jmc",
+    "password": "Jmc1234$",
     "firstname": "Joaquin",
     "lastname": "Condori",
     "email": "jmc@gmail.com",
     "phonenumber": "+543879988776",
     "stylename": "Landscapes",
     "message": ""
+
 }
 ### PUT contact
 PUT http://localhost:8080/user/mac HTTP/1.1
@@ -27,16 +28,16 @@ content-type: application/json
 
 {
     "username": "mac",
-    "password": "Jmc1234$",
-    "firstname": "Joaquin",
+    "password": "Mac1234$",
+    "firstname": "Miguel",
     "lastname": "Condori",
-    "email": "jmc@gmail.com",
+    "email": "mac@gmail.com",
     "phonenumber": "+543879988776",
     "stylename": "Modernism",
     "message": ""
 }
 ### DELETE contact
-DELETE http://localhost:8080/user/mac HTTP/1.1
+DELETE http://localhost:8080/user/jmc HTTP/1.1
 
 
 //Paintings
@@ -44,28 +45,15 @@ DELETE http://localhost:8080/user/mac HTTP/1.1
 GET http://localhost:8080/painting
 ###
 
-GET http://localhost:8080/painting/Miguel
+GET http://localhost:8080/painting/Landscapes
 ###
-
-### Create contact
-POST http://localhost:8080/painting HTTP/1.1
-content-type: application/json
-
-{
-    "painting_name": "Pepe",
-    "stylename": "Landscapes",
-    "author_name": "Claudia Dominguez",
-    "painting_description": "Two friends walking along the pier towards the sea",
-    "painting_data": "10/10/2021",
-    "painting_technic": "oleo paint over canvas"
-}
 
 
 // PRODUCTION Deploy
 ###
 GET https://cse341-class05.onrender.com/user
 ###
-GET https://cse341-class05.onrender.com/user/Miguel
+GET https://cse341-class05.onrender.com/user/mac
 
 ### Create contact
 POST https://cse341-class05.onrender.com/user HTTP/1.1
@@ -81,3 +69,20 @@ content-type: application/json
     "stylename": "Landscapes",
     "message": ""
 }
+### PUT contact
+PUT http://cse341-class05.onrender.com/mac HTTP/1.1
+content-type: application/json
+
+{
+    "username": "mac",
+    "password": "Mac1234$",
+    "firstname": "Miguel",
+    "lastname": "Condori",
+    "email": "mac@gmail.com",
+    "phonenumber": "+543879988776",
+    "stylename": "Modernism",
+    "message": ""
+}
+### DELETE contact
+DELETE http://cse341-class05.onrender.com/mac HTTP/1.1
+

@@ -1,6 +1,6 @@
 const db = require('../models');
 const Painting = db.painting;
-const passwordUtil = require('../util/passwordComplexityCheck');
+
 
 exports.getPainting = (req, res) => {
   const stylename = req.params.stylename;
@@ -32,7 +32,7 @@ module.exports.getAllPaintings = (req, res) => {
     res.status(500).json(err);
   }
 };
-
+/*
 module.exports.createPainting = (req, res) => {
   try {
     if (!req.body.username || !req.body.password) {
@@ -114,5 +114,5 @@ module.exports.deletePainting = async (req, res) => {
       return res.status(500).json({message: 'Some error occurred while deleting the painting.'});
   }
 };
-
+*/
 

@@ -6,6 +6,7 @@
         "painting_description": "Two friends walking along the pier towards the sea",
         "painting_data": "12/12/2021",
         "painting_technic": "oleo paint paste",
+        "imageUrl": "Education-City-Stadium.webp",
         "price": "500"
     },
     {
@@ -15,6 +16,7 @@
         "painting_description": "Two friends walking along the pier towards the sea",
         "painting_data": "10/10/2021",
         "painting_technic": "oleo paint over canvas",
+        "imageUrl": "Education-City-Stadium.webp",
         "price": "500"
     }
 ]

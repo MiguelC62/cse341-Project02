@@ -24,6 +24,9 @@ module.exports = (mongoose) => {
       message: {
         type: String
       },
+    },{
+      versionKey: false 
+    
     });
   
     return mongoose.model('user', userSchema, 'user');

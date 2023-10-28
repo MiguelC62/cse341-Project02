@@ -1,4 +1,4 @@
-# Lesson 5 Class Activity
+# Lesson 7 Class Activity
 
 ## How to run it
 

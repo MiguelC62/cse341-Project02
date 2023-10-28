@@ -31,6 +31,8 @@ module.exports.createUser = (req, res) => {
   }
 };
 
+
+
 module.exports.getAllUsers = (req, res) => {
   try {
     User.find({})
@@ -89,12 +91,9 @@ module.exports.updateUser = async (req, res) => {
     user.stylename = req.body.stylename;
     user.message = req.body.message;
       
-    const updatedUser = await user.save();
-
-    // Respond with  status 204(whitout content)
+    await user.save();
+    // Respond with status 204 (without content)
     res.status(204).send();
-    
-    return res.json(updatedUser);
 
   } catch (err) {
     res.status(500).json({message: 'server internal error'});
