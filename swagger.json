@@ -12,9 +12,9 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "host": "cse341-class05.onrender.com",
+  "host": "localhost:8080",
   "basePath": "/",
-  "schemes": ["https"],
+  "schemes": ["http"],
   "tags": [
     {
       "name": "painting",
@@ -68,104 +68,8 @@
       }
     },
     "/painting/": {
-      "post": {
-        "tags": ["Not Yet Implemented"],
-        "summary": "Create painting",
-        "description": "This is for when a user creates a painting.",
-        "operationId": "createPainting",
-        "produces": ["application/json"],
-        "parameters": [
-          {
-            "name": "body",
-            "in": "body",
-            "schema": {
-              "type": "object",
-              "properties": {
-                "painting_name": {
-                  "example": "any"
-                },
-                "stylename": {
-                  "example": "any"
-                },
-                "author_name": {
-                  "example": "any"
-                },
-                "painting_description": {
-                  "example": "any"
-                },
-                "painting_data": {
-                  "example": "any"
-                },
-                "painting_technic": {
-                  "example": "any"
-                }
-              }
-            }
-          }
-        ],
-        "responses": {
-          "201": {
-            "description": "Created"
-          },
-          "500": {
-            "description": "Internal Server Error"
-          }
-        }
-      },
-      "delete": {
-        "tags": ["Not Yet Implemented"],
-        "summary": "Delete painting",
-        "description": "This can only be done by the logged in user.",
-        "operationId": "deletePainting",
-        "produces": ["application/json"],
-        "parameters": [
-          {
-            "name": "paintingname",
-            "in": "query",
-            "description": "The paintin description",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Successfully deleted user"
-          },
-          "400": {
-            "description": "Invalid username supplied"
-          },
-          "404": {
-            "description": "User not found"
-          }
-        }
-      },
-      "put": {
-        "tags": ["Not Yet Implemented"],
-        "summary": "Update painting",
-        "description": "This can only be done by the logged in user.",
-        "operationId": "updatePainting",
-        "produces": ["application/json"],
-        "parameters": [
-          {
-            "name": "paintingname",
-            "in": "query",
-            "description": "The paintin description",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Successfully deleted user"
-          },
-          "400": {
-            "description": "Invalid username supplied"
-          },
-          "404": {
-            "description": "User not found"
-          }
-        }
-      },
+      
+     
       "get": {
         "tags": ["Not Yet Implemented"],
         "summary": "Get all paintings",
