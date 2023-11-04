@@ -12,9 +12,9 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
     }
   },
-  "host": "localhost:8080",
+  "host": "cse341-class05.onrender.com",
   "basePath": "/",
-  "schemes": ["http"],
+  "schemes": ["https"],
   "tags": [
     {
       "name": "painting",
