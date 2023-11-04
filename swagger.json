@@ -68,10 +68,8 @@
       }
     },
     "/painting/": {
-      
-     
       "get": {
-        "tags": ["Not Yet Implemented"],
+        "tags": ["painting"],
         "summary": "Get all paintings",
         "operationId": "getAllPaintss",
         "produces": ["application/json"],

@@ -4,15 +4,15 @@ const { requiresAuth } = require('express-openid-connect');
 
 const userController = require('../controllers/user');
 
-router.get('/', userController.getAllUsers, requiresAuth());
+router.get('/', requiresAuth(userController.getAllUsers));
 
-router.get('/:username', userController.getUser, requiresAuth());
+router.get('/:username', requiresAuth(userController.getUser));
 
-router.post('/', userController.createUser, requiresAuth());
+router.post('/', requiresAuth(userController.createUser));
 
-router.put('/:username', userController.updateUser, requiresAuth());
+router.put('/:username', requiresAuth(userController.updateUser));
 
-router.delete('/:username', userController.deleteUser, requiresAuth());
+router.delete('/:username', requiresAuth(userController.deleteUser));
 
 module.exports = router;
 
