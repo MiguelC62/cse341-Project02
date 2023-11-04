@@ -31,23 +31,17 @@ module.exports.createUser = (req, res) => {
   }
 };
 
-
-
-module.exports.getAllUsers = (req, res) => {
+module.exports.getAllUsers = async (req, res) => {
   try {
-    User.find({})
-      .then((data) => {
-        res.status(200).send(data);
-      })
-      .catch((err) => {
-        res.status(500).send({
-          message: err.message || 'Some error occurred while retrieving users.'
-        });
-      });
+    const data = await User.find({});
+    res.status(200).send(data);
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).send({
+      message: err.message || 'Some error occurred while retrieving users.'
+    });
   }
 };
+
 
 module.exports.getUser = (req, res) => {
   try {
