@@ -8,7 +8,7 @@ router.get('/', requiresAuth(userController.getAllUsers));
 
 router.get('/:username', requiresAuth(userController.getUser));
 
-router.post('/', requiresAuth(userController.createUser));
+router.post('/', userController.createUser);
 
 router.put('/:username', requiresAuth(userController.updateUser));
 
